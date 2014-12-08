@@ -1,0 +1,34 @@
+﻿{
+	"RunTimes" : [ "08:00", "12:30", "16:00" ],		// must be in HH:mm format
+	"Mail": {
+		"Subject" : "Heartbeat Service Report",
+		"Port": "25",
+		"Server" : "IUAEXCH-01",
+		"FromAddress" : "do-not-reply@iua.co.za",
+		"ToAddresses" : [ "matt@iua.co.za" ]
+	},
+  "WebSites" : [
+    { "Url" : "https://download.iua.co.za:8444/" },
+    { "Url" : "https://online.iua.co.za/" },
+    { "Url" : "http://daclaims.iua.co.za:8443/Claim/MainForm.wgx" },
+	{ "Url" : "http://iuaweb-01:9555/" },
+  ],
+  "SqlServerDatabases" : [
+	{ "Server" : "TITAN", "DbName" : "Archive", "ConnectionString" : "Data Source=TITAN;initial Catalog=Archive; Connect Timeout=5; Integrated Security=True" },
+	{ "Server" : "TITAN", "DbName" : "cadi_prod", "ConnectionString" : "Data Source=TITAN;initial Catalog=cadi_prod; Connect Timeout=5; Integrated Security=True" },
+	{ "Server" : "TITAN", "DbName" : "cadi_wesbank", "ConnectionString" : "Data Source=TITAN;initial Catalog=cadi_wesbank; Connect Timeout=5; Integrated Security=True" },
+	{ "Server" : "TITAN", "DbName" : "EmailArchive", "ConnectionString" : "Data Source=TITAN;initial Catalog=EmailArchive; Connect Timeout=5; Integrated Security=True" },
+	{ "Server" : "IUASQL-01", "DbName" : "DataWarehouse", "ConnectionString" : "Data Source=IUASQL-01;initial Catalog=DataWarehouse; Connect Timeout=5; Integrated Security=True" },
+	{ "Server" : "IUASQL-01", "DbName" : "DWStaging", "ConnectionString" : "Data Source=IUASQL-01;initial Catalog=DWStaging; Connect Timeout=5; Integrated Security=True" },
+	{ "Server" : "IUAACC-01", "DbName" : "IUA Master", "ConnectionString" : "Data Source=IUAACC-01;initial Catalog=IUA Master; Connect Timeout=5; Integrated Security=True" },
+  ],
+  "WindowsServices" : [
+	{ "Name" : "IUA Workflow Service", "Server" : "TITAN" },
+	{ "Name" : "IUA Trac Service", "Server" : "IUAWEB-01" },
+	{ "Name" : "IUA FTP Uploads", "Server" : "TITAN" },
+	{ "Name" : "IUA FirstView Workflow Service", "Server" : "TITAN" },
+	{ "Name" : "IUA Retentions Service", "Server" : "TITAN" },
+	{ "Name" : "Jenkins", "Server" : "IUADEV-01" },
+	{ "Name" : "IUA.Automation.Services.Server", "Server" : "IUADEV-02" },
+  ],
+}
